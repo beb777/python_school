@@ -4,7 +4,7 @@ import yfinance as yf
 import python_weather
 import asyncio
 
-API_KEY =  os.environ('API_KEY')
+API_KEY = os.environ.get('API_KEY')
 bot = telebot.TeleBot(API_KEY)
 
 @bot.message_handler(commands=['greet'])
