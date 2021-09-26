@@ -1,13 +1,15 @@
 import sys
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtWebEngineWidgets import *
+from PyQt5.Qt import *
+from PyQt5.QtWebChannel import *
+# from PyQt5.QtWebEngineWidgets import *
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.browser = QWebEngineView()
+        self.browser = QtWebChannel()
         self.browser.setUrl(QUrl('http://google.com'))
         self.setCentralWidget(self.browser)
         self.showMaximized()
@@ -39,7 +41,7 @@ class MainWindow(QMainWindow):
         self.browser.urlChanged.connect(self.update_url)
 
     def navigate_home(self):
-        self.browser.setUrl(QUrl('http://-----'))
+        self.browser.setUrl(QUrl('https://github.com/beb777'))
 
     def navigate_to_url(self):
         url = self.url_bar.text()
