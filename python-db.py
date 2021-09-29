@@ -1,0 +1,4 @@
+import mysql.connector
+from mysql import *
+mydb = mysql.connector.connect(host='localhost', user='root',passwd='1234')
+print(mydb)
